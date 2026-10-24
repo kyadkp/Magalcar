@@ -1,0 +1,7 @@
+<h1>Liste des véhicules</h1>
+
+{% for vehicule in vehicules %}
+    <p>{{ vehicule.marque }} {{ vehicule.modele }}</p>
+{% empty %}
+    <p>Aucun véhicule disponible.</p>
+{% endfor %}

@@ -1,0 +1,88 @@
+<div class="col-xl-4 col-lg-6">
+
+    <div class="de-item mb30">
+
+        <div class="d-img">
+
+            {% with image=vehicule.imagevehicule_set.first %}
+              {% if image %}
+                  <img src="{{ image.image.url }}" class="img-fluid" alt="{{ vehicule.marque }}">
+             {% else %}
+                 <img src="{% static 'images/cars/default.jpg' %}" class="img-fluid" alt="">
+             {% endif %}
+            {% endwith %}
+
+    
+
+        </div>
+
+        <div class="d-info">
+
+            <div class="d-text">
+
+                <h4>
+
+                    {{ vehicule.marque }}
+                    {{ vehicule.modele }}
+
+                </h4>
+
+                <div class="d-atr-group">
+
+                    <span class="d-atr">
+
+                        <img src="{% static 'images/icons/1-green.svg' %}">
+
+                        {{ vehicule.nombre_places }}
+
+                    </span>
+
+                    <span class="d-atr">
+
+                        <img src="{% static 'images/icons/2-green.svg' %}">
+
+                        {{ vehicule.transmission }}
+
+                    </span>
+
+                    <span class="d-atr">
+
+                        <img src="{% static 'images/icons/3-green.svg' %}">
+
+                        {{ vehicule.carburant }}
+
+                    </span>
+
+                    <span class="d-atr">
+
+                        <img src="{% static 'images/icons/4-green.svg' %}">
+
+                        {{ vehicule.categorie.nom }}
+
+                    </span>
+
+                </div>
+
+                <div class="d-price">
+
+                    A partir de
+
+                    <span>
+
+                        {{ vehicule.prix_par_jour }} FCFA
+
+                    </span>
+
+                    <a href="{% url 'car_single' vehicule.id %}" class="btn-main">
+    Voir
+</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
